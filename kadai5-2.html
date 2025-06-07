@@ -13,6 +13,9 @@
     <div id="result"></div>
     <script>
         async function some_api(myForm) {
+            const endpoint = await fetch("https://pokeapi.co/api/v2/pokemon/" + myForm.form_data.value +"/");// ここにコードを書く
+            const text = await endpoint.text();
+            const data = JSON.parse(text);
             // ここにコードを書く
             document.getElementById("result").innerHTML += myForm.form_data.value+"<br />";
             document.apiform.reset();
